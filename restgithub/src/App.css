@@ -1,0 +1,92 @@
+/* App.css */
+
+/* 전체 레이아웃 중앙 정렬 및 배경색 */
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* 입력창 스타일 */
+input[type="text"] {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px 0 0 8px; /* 왼쪽만 둥글게 */
+  outline: none;
+  width: 60%;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #24292e; /* 깃허브 시그니처 컬러 */
+}
+
+/* 검색 버튼 스타일 */
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #2ea44f; /* 깃허브 초록색 버튼 */
+  color: white;
+  border: 2px solid #2ea44f;
+  border-radius: 0 8px 8px 0; /* 오른쪽만 둥글게 */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2c974b;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse; /* 테두리 겹침 방지 */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 테이블 헤더 (필요시 추가) */
+th {
+  background-color: #f6f8fa;
+  padding: 12px;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+/* 각 행 스타일 */
+tr {
+  transition: background-color 0.1s;
+}
+
+tr:hover {
+  background-color: #f1f8ff; /* 마우스 올렸을 때 강조 */
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid #e1e4e8;
+  text-align: left;
+}
+
+/* 링크 스타일 */
+a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 결과 없음 메시지 */
+p {
+  margin-top: 2rem;
+  color: #586069;
+  font-style: italic;
+}

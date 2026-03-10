@@ -1,0 +1,163 @@
+/* 🎨 라벤더 테마 컬러 팔레트 설정 */
+:root {
+  --lavender-bg: #f5f3ff;       /* 아주 연한 배경색 */
+  --lavender-card: #ffffff;     /* 카드(폼, 게시글) 배경색 */
+  --lavender-border: #ddd6fe;   /* 테두리 색상 */
+  --lavender-primary: #8b5cf6;  /* 메인 보라색 (버튼 등) */
+  --lavender-hover: #7c3aed;    /* 마우스 올렸을 때 짙은 보라색 */
+  --text-main: #4c1d95;         /* 진한 보라색 텍스트 */
+  --text-muted: #6d28d9;        /* 서브 텍스트 */
+}
+
+/* 전체 배경 및 폰트 설정 */
+body {
+  background-color: var(--lavender-bg);
+  color: var(--text-main);
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* 메인 컨테이너 (App 컴포넌트의 최상위 div) */
+div > header, div > section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--lavender-primary);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+/* 입력 폼 섹션 (카드 스타일) */
+form {
+  background-color: var(--lavender-card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+  margin-bottom: 40px;
+}
+
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--lavender-primary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--lavender-border);
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--lavender-primary);
+}
+
+/* 제출 버튼 스타일 */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--lavender-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--lavender-hover);
+}
+
+button:disabled {
+  background-color: var(--lavender-border);
+  cursor: not-allowed;
+}
+
+/* 포스트 리스트 섹션 */
+section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--lavender-border);
+  padding-bottom: 10px;
+}
+
+/* 개별 포스트 아이템 */
+section > div > div {
+  background-color: var(--lavender-card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border-left: 6px solid var(--lavender-primary);
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.05);
+  transition: transform 0.2s ease;
+}
+
+section > div > div:hover {
+  transform: translateY(-2px);
+}
+
+section > div > div span {
+  font-size: 0.8rem;
+  color: var(--lavender-primary);
+  font-weight: bold;
+  background-color: var(--lavender-bg);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+section > div > div h3 {
+  margin: 10px 0;
+  color: var(--text-main);
+}
+
+section > div > div p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* 🌀 로딩 스피너 애니메이션 (중요) */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -120,12 +120,7 @@ const [ open, setOpen ] = useState(false);
               variant='outlined'
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}
-              onKeyDown={e => {
-                if (e.key === 'Enter') {
-                  handleAddTodo();
-                  setOpen(false);
-                }
-              }}
+              onKeyDown={(e) => e.key === 'Enter' && handleAddTodo()}
             />
           </DialogContent>
           <DialogActions>

@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getCars, deleteCar } from "../api/carapi";
 import { DataGrid, GridColDef, GridCellParams,GridToolbar } from "@mui/x-data-grid";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Button } from "@mui/material";
 import { useState } from "react";
 import AddCar from "./AddCar";
 import EditCar from "./EditCar";
@@ -48,7 +48,7 @@ const { mutate } = useMutation(deleteCar, {
       filterable: false,
       disableColumnMenu: true,
       renderCell: (params:GridCellParams) => {
-        return <button 
+        return <Button 
           onClick={() => {
             if (confirm(`${params.row.brand}의 ${params.row.color} ${params.row.model}을 삭제 하시겠습니까?`)) {
               mutate(params.row._links.self.href);
@@ -56,7 +56,7 @@ const { mutate } = useMutation(deleteCar, {
           }}
         >
         삭제
-        </button>
+        </Button>
       }
     }
   ]

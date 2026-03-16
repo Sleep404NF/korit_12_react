@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CarResponse, Car, CarEntry } from "../types";
-import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { Dialog, DialogActions, DialogTitle, Button } from "@mui/material";
 import CarDialogContent from "./CarDialogContent";
 import { updateCar } from "../api/carapi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -59,15 +59,13 @@ export default function EditCar({ cardata } : FormProps) {
 
   return(
     <>
-      <button onClick={handleClickOpen}>
-        Edit
-      </button>
+      <Button size="small" variant="contained" onClick={handleClickOpen}>수정</Button>
       <Dialog open={open} onClose={handleClickClose}>
-        <DialogTitle>Edit Car</DialogTitle>
+        <DialogTitle>차량 변경</DialogTitle>
         <CarDialogContent car={car} handleChange={handleChange} />
         <DialogActions>
-          <button onClick={handleClickClose}>Cancel</button>
-          <button onClick={handleSave}>Save</button>
+          <Button onClick={handleClickClose} color="error">취소</Button>
+          <Button onClick={handleSave} variant="contained" color="primary">저장</Button>
         </DialogActions>
       </Dialog>
     </>
